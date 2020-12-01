@@ -26,7 +26,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 
 public class ChartController implements Initializable {
 
@@ -126,45 +125,30 @@ public class ChartController implements Initializable {
 			});
 		}
 
+		setLegendColor();
+
+		chartPane.setCenter(barChart);
+	}
+
+	private void setLegendColor() {
 		// set first bar color
 		for (Node n : barChart.lookupAll(".default-color0.chart-bar")) {
 			n.setStyle("-fx-bar-fill: green;");
 		}
+
 		// second bar color
 		for (Node n : barChart.lookupAll(".default-color1.chart-bar")) {
 			n.setStyle("-fx-bar-fill: blue;");
 		}
 
-		Rectangle r = new Rectangle();
-		r.setWidth(20);
-		r.setHeight(20);
-		r.setFill(Color.GREEN);
-		hboxLegend.getChildren().add(r);
-		hboxLegend.getChildren().add(new Text("Dự kiến"));
-
-		r = new Rectangle();
-		r.setWidth(20);
-		r.setHeight(20);
-		r.setFill(Color.BLUE);
-		hboxLegend.getChildren().add(r);
-		hboxLegend.getChildren().add(new Text("Thực tế"));
-
-		r = new Rectangle();
-		r.setWidth(20);
-		r.setHeight(20);
-		r.setFill(Color.RED);
-		hboxLegend.getChildren().add(r);
-		hboxLegend.getChildren().add(new Text("Bù"));
-
-		barChart.setLegendVisible(false);
-
 		for (Node n : barChart.getChildrenUnmodifiable()) {
 			if (n instanceof Legend) {
-				final Legend legend = (Legend) n;
+				Legend legend = (Legend) n;
+				Legend.LegendItem li1 = new Legend.LegendItem("Dự kiến", new Rectangle(10, 10, Color.GREEN));
+				Legend.LegendItem li2 = new Legend.LegendItem("Thực tế", new Rectangle(10, 10, Color.BLUE));
+				Legend.LegendItem li3 = new Legend.LegendItem("Bù", new Rectangle(10, 10, Color.RED));
+				legend.getItems().setAll(li1, li2, li3);
 			}
 		}
-
-		chartPane.setCenter(barChart);
 	}
-
 }

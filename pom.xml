@@ -68,6 +68,10 @@
 				<version>0.0.4</version>
 				<configuration>
 					<mainClass>com.ceti.demojfx.App</mainClass>
+					<options>
+						<option>--add-exports</option>
+						<option>javafx.controls/com.sun.javafx.charts=ALL-UNNAMED</option>
+					</options>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -93,6 +97,5 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
 	</build>
 </project>
