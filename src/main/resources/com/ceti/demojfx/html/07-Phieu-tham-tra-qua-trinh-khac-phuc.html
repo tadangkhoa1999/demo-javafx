@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phieu tham tra qua trinh khac phuc</title>
+    <style>
+        @page {
+            size: portrait;
+        }
+
+        body {
+            font-family: "VU Arial", sans-serif;
+        }
+
+        /*----------------------------------------*/
+
+        .header {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .colL1 {
+            width: 40%;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 15px;
+        }
+
+        .headerLeft td {
+            border: 1px solid black;
+            height: 60px;
+            text-align: center;
+        }
+
+        .headerRight td {
+            border: 1px solid black;
+            width: 12.5%;
+            height: 60px;
+            padding: 8px 0;
+        }
+
+        .headerRight .colR2,
+        .colR4 {
+            text-align: right;
+            font-size: 13px;
+        }
+
+        .headerRight .colR3,
+        .colR5 {
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .colL2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 15px;
+        }
+
+
+
+        .table-body {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table-body td {
+            height: 15px;
+            text-align: center;
+        }
+
+        .table-body td,
+        th {
+            border: 1px solid black;
+            padding: 8px 0;
+        }
+
+        .table-title th {
+            background-color: #FBD4B4;
+            font-size: 15px;
+        }
+
+        .tt {
+            width: 5%;
+        }
+
+        .mvp {
+            width: 20%;
+        }
+
+        .yckp {
+            width: 15%
+        }
+
+        .result {
+            width: 45%
+        }
+
+        .last-result,
+        .count-result {
+            background-color: #B6DDE8;
+            color: black;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .last-result td {
+            width: 5%;
+        }
+
+        .note {
+            width: 15%
+        }
+
+        .sign{
+            text-align: center;
+            float: right;
+            margin-right: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="header">
+        <tr class="headerLeft">
+            <td class="colL1" rowspan="2">
+                <img src="../images/anphapetrol.jpg" alt="logo" width="300" height="100">
+                <p class="title">Tập đoàn dầu khí Anpha</p>
+            </td>
+            <td class="colL2" colspan="4">
+                <p class="title">Phiếu thẩm tra quá trình khắc phục</p>
+            </td>
+        </tr>
+        <tr class="headerRight">
+            <td class="colR2">
+                Biểu mẫu số: &nbsp;<br />
+                Ngày ban hành:&nbsp;<br />
+                Soạn thảo:&nbsp;<br />
+                Kiểm tra:&nbsp;<br />
+            </td>
+            <td class="colR3">
+                &nbsp;: ASP-ICF-07<br />
+                &nbsp;: 11/08/2020<br />
+                &nbsp;: Phạm Thị Hồng Nhạn<br />
+                &nbsp;: Nguyễn Thị Thu Nga<br />
+            </td>
+            <td class="colR4">
+                Trang số:&nbsp;<br />
+                Lần sửa đổi:&nbsp;<br />
+                Ngày sửa đổi:&nbsp;<br />
+            </td>
+            <td class="colR5">
+                &nbsp;:1/1<br />
+                &nbsp;:0.0<br />
+                &nbsp;:.................<br />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <table class="table-body">
+        <tr class="table-title">
+            <th class="tt" rowspan="3">TT</th>
+            <th rowspan="3" class="mvp">Mục vi phạm</th>
+            <th rowspan="3" class="yckp">Nội dung yêu cầu khắc phục </th>
+            <th colspan="6" class="result">Kết quả</th>
+            <th rowspan="3" class="note">Ghi chú</th>
+
+        </tr>
+        <tr class="count-result">
+            <td colspan="2">Lần 1</td>
+            <td colspan="2">Lần 2</td>
+            <td colspan="2">Lần 3</td>
+        </tr>
+        <tr class="last-result">
+            <td>Đạt</td>
+            <td>K.Đạt</td>
+            <td>Đạt</td>
+            <td>K.Đạt</td>
+            <td>Đạt</td>
+            <td>K.Đạt</td>
+        </tr>
+
+        <tr>
+            <td>1.</td>
+            <td th:text="${customerName}"/>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <div class="sign">
+        <p>..........., Ngày______tháng______năm______</p>
+        <p style="font-weight:bold;">NGƯỜI THEO DÕI</p>
+        <p>(Ký, ghi rõ họ tên)</p><br />
+        <br />
+        <br />
+    </div>
+</body>
+
+</html>

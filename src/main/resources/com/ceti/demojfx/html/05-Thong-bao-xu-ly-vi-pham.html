@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thong bao xu ly vi pham</title>
+    <style>
+        @page {
+            size: portrait;
+        }
+
+        body {
+            font-family: "VU Arial", sans-serif;
+        }
+
+        /*----------------------------------------*/
+
+        .header {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .colL1 {
+            width: 40%;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 15px;
+        }
+
+        .headerLeft td {
+            border: 1px solid black;
+            height: 60px;
+            text-align: center;
+        }
+
+        .headerRight td {
+            border: 1px solid black;
+            width: 12.5%;
+            height: 60px;
+            padding: 8px 0;
+        }
+
+        .headerRight .colR2,
+        .colR4 {
+            text-align: right;
+            font-size: 13px;
+        }
+
+        .headerRight .colR3,
+        .colR5 {
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .colL2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 15px;
+        }
+
+        .bold{
+            font-weight: bold;
+        }
+        
+        .italic{
+            font-style: italic;
+        }
+
+        .noWarp{
+            white-space: nowrap;
+        }
+
+        .sign:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .signColumn {
+            float: left;
+            width: 50%;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <table class="header">
+        <tr class="headerLeft">
+            <td class="colL1" rowspan="2">
+                <img src="../images/anphapetrol.jpg" alt="logo" width="300" height="100">
+                <p class="title">Tập đoàn dầu khí Anpha</p>
+            </td>
+            <td class="colL2" colspan="4" >
+                <p class="title">Thông báo xử lý vi phạm</p>
+            </td>
+        </tr>
+        <tr class="headerRight">
+            <td class="colR2">
+                Biểu mẫu số: &nbsp;<br/>
+                Ngày ban hành:&nbsp;<br/>
+                Soạn thảo:&nbsp;<br/>
+                Kiểm tra:&nbsp;<br/>
+            </td>
+            <td class="colR3">
+                &nbsp;: ASP-ICF-05<br/>
+                &nbsp;: 11/08/2020<br/>
+                &nbsp;: Phạm Thị Hồng Nhạn<br/>
+                &nbsp;: Nguyễn Thị Thu Nga<br/>
+            </td>
+            <td class="colR4">
+                Trang số:&nbsp;<br/>
+                Lần sửa đổi:&nbsp;<br/>
+                Ngày sửa đổi:&nbsp;<br/>
+            </td>
+            <td class="colR5">
+                &nbsp;:1/1<br/>
+                &nbsp;:0.0<br/>
+                &nbsp;:.................<br/>
+            </td>
+        </tr>
+    </table>
+
+    <div class="date">
+        <p class="bold italic">Số:_____/ASP_CV/2020</p>
+        <p class="bold italic">Ngày:____/____/____</p>
+    </div>
+
+    <div class="text">
+        <p class="bold" style="margin:0 0 20px 230px">Kính gửi: Khối/Ban/Cơ sở</p>
+        <p class="italic" style="margin-left: 100px;">-&nbsp; Căn cứ quy chế tổ chức và hoạt động của Ban Kiểm tra;</p>
+        <p class="italic" style="margin:0 0 30px 100px;">-&nbsp; Căn cứ Biên bản Kiểm tra, ngày........tháng.......năm20......;</p>
+
+        <p>Ban kiểm tra thông báo đến Khối/Ban/Cơ sở....................về việc xử lý vi phạm của:</p>
+        <p class="noWarp">Khối/Ban/Cơ sở: ...........................................................................................................................................................
+        </p>
+        <p class="noWarp">Ông/Bà: ........................................................................................................................................................................
+        </p>
+        <p class="noWarp" style="margin-bottom: 15px;">Chức vụ: .......................................................................................................................................................................
+        </p>
+
+        <p class="bold">Lỗi vi phạm như sau:</p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p class="bold">Hình thức xử lý vi phạm và phương án khắc phục</p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p>.......................................................................................................................................................................................
+        </p>
+
+        <p>Ban Kiểm tra thông báo đến Khối/Ban/Cơ sở liên quan để thực hiện.</p>
+        <p>Trân trọng.</p>
+
+        <div class="sign">
+            <div class="sign">
+                <div class="signColumn" style="text-align: left;">
+                    <br/>
+                    <p class="bold">Nơi nhận: </p>
+                    <p class="italic">- Như trên:</p>
+                    <p class="italic">- Lưu VT:</p>
+    
+                </div>
+                <div class="signColumn">
+                    <p style="font-weight:bold;"> GIÁM ĐỐC BAN KIỂM TRA</p>
+                    <p>(Ký, ghi rõ họ tên)</p><br />
+                    <br/>
+                    <br/>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

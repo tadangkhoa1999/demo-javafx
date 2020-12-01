@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách hợp đồng nhận hàng</title>
+    <style>
+        @page {
+            size: A4 landscape;
+        }
+
+        body {
+            font-family: "VU Arial", sans-serif;
+        }
+
+
+        .column {
+            float: left;
+            width: 50%;
+            text-align: center;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .header-logo img{
+            width: 200px;
+            height: 100px;
+        }
+
+        .contract-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .contract-table td {
+            font-size: 0.5rem;
+        }
+
+        .contract-table td,
+        th {
+            border: 1px solid black;
+            height: 40px;
+            width: 7%;
+            text-align: left;
+            padding: 8px;
+            margin: 0;
+        }
+
+        .contract-table-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .contract-title {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .column1 p {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .chxhvn {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .dltdhp {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="column column1">
+            <p>Công ty cổ phần Tập đoàn dầu khí Anpha</p>
+            <img class="header-logo" src="../images/anphapetrol.jpg" alt="logo" width="300" height="100"/>
+        </div>
+        <div class="column column2">
+            <p class="chxhvn">Cộng hòa xã hội chủ nghĩa Việt Nam</p>
+            <br />
+            <p class="dltdhp">Độc lập - Tự do - Hạnh phúc</p>
+            <br />
+            <p class="dltdhp">..., ngày ... tháng ... năm 20..</p>
+        </div>
+    </div>
+
+    <div class="contract">
+        <div class="contract-title">
+            <p>Danh sách hợp đồng nhận hàng</p>
+        </div>
+        <table class="contract-table">
+            <tr class="contract-table-title">
+                <td>Số hợp đồng</td>
+                <td>Nhà cung cấp</td>
+                <td>Tổng khối lượng (tấn)</td>
+                <td>Tổng khối lượng đã nhập (tấn)</td>
+                <td>Tổng khối lượng còn nợ (tấn)</td>
+                <td>Tổng khối lượng theo Hợp đồng</td>
+                <td>Tổng khối lượng đã nhập</td>
+                <td>Tổng khối lượng còn nợ</td>
+                <td>Phương thức thanh toán</td>
+                <td>Chi tiết thanh toán</td>
+                <td>Ngày ký</td>
+                <td>Ngày hết hạn</td>
+                <td>Loại hợp đồng</td>
+            </tr>
+
+            <tr>
+                <td th:text="${customerName}"/>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

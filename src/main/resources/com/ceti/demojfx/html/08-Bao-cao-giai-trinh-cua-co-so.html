@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bao cao giai trinh cua co so</title>
+    <style>
+        @page {
+            size: portrait;
+        }
+
+        body {
+            font-family: "VU Arial", sans-serif;
+        }
+
+        /*----------------------------------------*/
+
+        .body {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .body td {
+            border: 1px solid black;
+            height: 60px;
+            text-align: center;
+        }
+
+        .header {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .colL1 {
+            width: 40%;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 15px;
+        }
+
+        .headerLeft td {
+            border: 1px solid black;
+            height: 60px;
+            text-align: center;
+        }
+
+        .headerRight td {
+            border: 1px solid black;
+            width: 12.5%;
+            height: 60px;
+            padding: 8px 0;
+        }
+
+        .headerRight .colR2,
+        .colR4 {
+            text-align: right;
+            font-size: 13px;
+        }
+
+        .headerRight .colR3,
+        .colR5 {
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .colL2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 15px;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .noWarp {
+            white-space: nowrap;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="header">
+        <tr class="headerLeft">
+            <td class="colL1" rowspan="2">
+                <img src="../images/anphapetrol.jpg" alt="logo" width="300" height="100">
+                <p class="title">Tập đoàn dầu khí Anpha</p>
+            </td>
+            <td class="colL2" colspan="4">
+                <p class="title">Kế hoạch nội bộ kiểm tra định kỳ</p>
+            </td>
+        </tr>
+        <tr class="headerRight">
+            <td class="colR2">
+                Biểu mẫu số: &nbsp;<br />
+                Ngày ban hành:&nbsp;<br />
+                Soạn thảo:&nbsp;<br />
+                Kiểm tra:&nbsp;<br />
+            </td>
+            <td class="colR3">
+                &nbsp;: ASP-ICF-08<br />
+                &nbsp;: 11/08/2020<br />
+                &nbsp;: Phạm Thị Hồng Nhạn<br />
+                &nbsp;: Nguyễn Thị Thu Nga<br />
+            </td>
+            <td class="colR4">
+                Trang số:&nbsp;<br />
+                Lần sửa đổi:&nbsp;<br />
+                Ngày sửa đổi:&nbsp;<br />
+            </td>
+            <td class="colR5">
+                &nbsp;:1/1<br />
+                &nbsp;:0.0<br />
+                &nbsp;:.................<br />
+            </td>
+        </tr>
+    </table>
+
+    <p class="bold" style="text-align: center;">Kính gửi: Giám đốc Ban Kiểm tra</p>
+    <p class="italic" style="margin-left: 50px;">-&nbsp; Căn cứ Biên bản Kiểm tra số ________, ngày______/______/______
+    </p>
+    <p class="italic" style="margin:0 0 30px 50px;">-&nbsp; Căn cứ vào hồ sơ, chứng từ tại cơ sở;</p>
+
+    <p>Cơ sở______________ xin báo cáo và giải trình và phương án khắc phục các vấn đề được nêu trong</p>
+    <p>Biên bản số ________, ngày_____/_____/_____ như sau:</p>
+
+    <table class="body">
+        <tr>
+            <td colspan="2">BÁO CÁO GIẢI TRÌNH</td>
+        </tr>
+        <tr>
+            <td colspan="2">1. Giải trình</td>
+            <br />
+        </tr>
+        <tr>
+            <td colspan="2">2. Phương án khắc phục</td>
+            <br />
+        </tr>
+        <tr>
+            <td>
+                <p style="white-space: nowrap;">...........Ngày, _____tháng____năm____</p>
+                <p style="font-weight: bold;">PHỤ TRÁCH CƠ SỞ</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+                <br /><br /><br /><br /><br/><br/>
+
+            </td>
+            <td>
+                <p style="white-space: nowrap;">...........Ngày, _____tháng____năm____</p>
+                <p style="font-weight: bold;">GIÁM ĐỐC KHỐI/BAN PHỤ TRÁCH</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+                <br /><br /><br /><br /><br/><br/>
+            </td>
+        </tr>
+
+
+    </table>
+</body>
+
+</html>

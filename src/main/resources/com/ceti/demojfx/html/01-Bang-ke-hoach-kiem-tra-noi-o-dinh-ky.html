@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BangKeHoachKiemTraNoiBoDinhKy</title>
+    <style>
+        @page {
+            size: portrait;
+        }
+
+        body {
+            font-family: "VU Arial", sans-serif;
+        }
+
+        /*----------------------------------------*/
+
+        .header {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .colL1 {
+            width: 40%;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 15px;
+        }
+
+        .headerLeft td {
+            border: 1px solid black;
+            height: 60px;
+            text-align: center;
+        }
+
+        .headerRight td {
+            border: 1px solid black;
+            width: 12.5%;
+            height: 60px;
+            padding: 8px 0;
+        }
+
+        .headerRight .colR2,
+        .colR4 {
+            text-align: right;
+            font-size: 13px;
+        }
+
+        .headerRight .colR3,
+        .colR5 {
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .colL2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 15px;
+        }
+
+        /*----------------------------------------*/
+
+        .date::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .date-detail {
+            margin: 15px 0;
+            float: left;
+            width: 32.5%;
+            text-align: center;
+        }
+
+        .date input {
+            color: white;
+            background-color: white;
+            height: 25px;
+            width: 25px;
+        }
+
+
+        /*----------------------------------------*/
+
+
+        .data {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+
+        .data td,
+        th {
+            border: 1px solid black;
+            padding: 8px 0;
+        }
+
+        .data td {
+            height: 15px;
+            text-align: center;
+        }
+
+        .stt {
+            width: 5%
+        }
+
+        .content {
+            width: 20%
+        }
+
+        .place {
+            width: 15%
+        }
+
+        .time {
+            width: 45%;
+        }
+
+        .note {
+            width: 15%;
+        }
+
+        .data-moth {
+            width: 100%;
+        }
+
+        .data-title th {
+            color: black;
+            background-color: #FBD4B4;
+        }
+
+        .data-moth td {
+            width: 25px;
+            text-align: center;
+            color: black;
+            background-color: #D6E3BC;
+        }
+
+
+        /*----------------------------------------*/
+        .note-footer {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .note-information {
+            margin-left: 50px;
+            font-style: italic;
+        }
+
+        .sign:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .signColumn {
+            float: left;
+            width: 50%;
+            text-align: center;
+        }
+
+        .colL1 img {
+            width: 200px;
+            height: 80px;
+        }
+
+        .title{
+            font-size: 18px;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <table class="header">
+        <tr class="headerLeft">
+            <td class="colL1" rowspan="2">
+                <img src="../images/anphapetrol.jpg" alt="logo" width="300" height="100">
+                <p class="title">Tập đoàn dầu khí Anpha</p>
+            </td>
+            <td class="colL2" colspan="4" >
+                <p class="title">Kế hoạch nội bộ kiểm tra định kỳ</p>
+            </td>
+        </tr>
+        <tr class="headerRight">
+            <td class="colR2">
+                Biểu mẫu số: &nbsp;<br/>
+                Ngày ban hành:&nbsp;<br/>
+                Soạn thảo:&nbsp;<br/>
+                Kiểm tra:&nbsp;<br/>
+            </td>
+            <td class="colR3">
+                &nbsp;: ASP-ICF-01<br/>
+                &nbsp;: 11/08/2020<br/>
+                &nbsp;: Phạm Thị Hồng Nhạn<br/>
+                &nbsp;: Nguyễn Thị Thu Nga<br/>
+            </td>
+            <td class="colR4">
+                Trang số:&nbsp;<br/>
+                Lần sửa đổi:&nbsp;<br/>
+                Ngày sửa đổi:&nbsp;<br/>
+            </td>
+            <td class="colR5">
+                &nbsp;:1/1<br/>
+                &nbsp;:0.0<br/>
+                &nbsp;:.................<br/>
+            </td>
+        </tr>
+    </table>
+
+    <div class="date">
+        <div class="date-detail month">
+            Tháng <input type="checkbox">_________
+        </div>
+        <div class="date-detail trimester">
+            Quý <input type="checkbox">_________
+        </div>
+        <div class="date-detail year">
+            Năm<input type="checkbox">_________
+        </div>
+    </div>
+
+    <table class="data">
+        <tr class="data-title">
+            <th rowspan="2" class="stt">STT</th>
+            <th rowspan="2" class="content">Nội dung kiểm tra</th>
+            <th rowspan="2" class="place">Cơ sở được kiểm tra</th>
+            <th colspan="12" class="time">Thời gian dự kiến </th>
+            <th rowspan="2" class="note">Ghi chú</th>
+        </tr>
+        <tr class="data-moth">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td th:text="${customerName}"/>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="sign">
+        <div class="signColumn">
+            <p class="sign">___, ngày___tháng___năm___</p>
+            <p class="title">GIÁM ĐỐC BAN KIỂM TRA</p>
+            <br /><br /><br /><br />
+            <p class="sign-name-1">________________</p>
+
+        </div>
+        <div class="signColumn">
+            <p>___, ngày___tháng___năm___</p>
+            <p class="title"> PHÊ DUYỆT CỦA TỔNG GIÁM ĐỐC</p>
+            <br /><br /><br /><br />
+            <p>________________</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="note-footer">Ghi chú: </p>
+        <p class="note-information">- Kế hoạch theo tháng: ghi ngày cụ thể</p>
+        <p class="note-information">- Kế hoạch theo Quí/Năm: đánh dấu ✔ vào ô thời gian dự kiến</p>
+    </div>
+</body>
+
+</html>

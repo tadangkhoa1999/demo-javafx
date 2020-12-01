@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bao cao ket qua kiem tra</title>
+    <style>
+        @page {
+            size: portrait;
+        }
+
+        body {
+            font-family: "VU Arial", sans-serif;
+        }
+
+        /*----------------------------------------*/
+
+        .header {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .colL1 {
+            width: 40%;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 15px;
+        }
+
+        .headerLeft td {
+            border: 1px solid black;
+            height: 60px;
+            text-align: center;
+        }
+
+        .headerRight td {
+            border: 1px solid black;
+            width: 12.5%;
+            height: 60px;
+            padding: 8px 0;
+        }
+
+        .headerRight .colR2,
+        .colR4 {
+            text-align: right;
+            font-size: 13px;
+        }
+
+        .headerRight .colR3,
+        .colR5 {
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .colL2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 15px;
+        }
+
+        /*----------------------------------------*/
+        .bold {
+            font-weight: bold;
+        }
+
+        .noWarp {
+            white-space: nowrap;
+        }
+
+        .sign:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .signColumn {
+            float: left;
+            width: 50%;
+            text-align: center;
+        }
+
+        .sign,.text p{
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table class="header">
+        <tr class="headerLeft">
+            <td class="colL1" rowspan="2">
+                <img src="../images/anphapetrol.jpg" alt="logo" width="300" height="100">
+                <p class="title">Tập đoàn dầu khí Anpha</p>
+            </td>
+            <td class="colL2" colspan="4" >
+                <p class="title">Kế hoạch nội bộ kiểm tra định kỳ</p>
+            </td>
+        </tr>
+        <tr class="headerRight">
+            <td class="colR2">
+                Biểu mẫu số: &nbsp;<br/>
+                Ngày ban hành:&nbsp;<br/>
+                Soạn thảo:&nbsp;<br/>
+                Kiểm tra:&nbsp;<br/>
+            </td>
+            <td class="colR3">
+                &nbsp;: ASP-ICF-04<br/>
+                &nbsp;: 11/08/2020<br/>
+                &nbsp;: Phạm Thị Hồng Nhạn<br/>
+                &nbsp;: Nguyễn Thị Thu Nga<br/>
+            </td>
+            <td class="colR4">
+                Trang số:&nbsp;<br/>
+                Lần sửa đổi:&nbsp;<br/>
+                Ngày sửa đổi:&nbsp;<br/>
+            </td>
+            <td class="colR5">
+                &nbsp;:1/1<br/>
+                &nbsp;:0.0<br/>
+                &nbsp;:.................<br/>
+            </td>
+        </tr>
+    </table>
+    <br />
+
+    <div class="text">
+        <p class="bold noWarp">Kính
+            gửi:................................................................................................................................................................
+        </p>
+        <p style="font-style: italic;">Căn cứ vào biên bản Kiểm tra thực tế tại cơ sở..........................,
+            ngày.......tháng........năm.......</p>
+        <p>Ban Kiểm tra xin báo cáo kết quả kiểm tra như sau:</p>
+        <p class="bold" style="margin-top:15px">A. &nbsp; &nbsp; THÀNH VIÊN ĐOÀN KIỂM TRA</p>
+        <p class="noWarp">
+            Ông/Bà:..........................................................................................................Chức
+            vụ:.................................................</p>
+        <p class="noWarp">
+            Ông/Bà:..........................................................................................................Chức
+            vụ:.................................................</p>
+        <p class="noWarp">
+            Ông/Bà:..........................................................................................................Chức
+            vụ:.................................................</p>
+        <p class="noWarp">
+            Ông/Bà:..........................................................................................................Chức
+            vụ:.................................................</p>
+        <p class="bold">B. &nbsp; &nbsp; NỘI DUNG KIỂM TRA</p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p class="bold">C. &nbsp; &nbsp; ĐÁNH GIÁ PHẠM VI - TÍNH TUÂN THỦ</p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p class="bold">D. &nbsp; &nbsp; HỒ SƠ/TÀI LIỆU ĐÍNH KÈM</p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p class="bold">E. &nbsp; &nbsp; ĐỀ XUẤT PHƯƠNG ÁN XỬ LÝ</p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p>.......................................................................................................................................................................................
+        </p>
+        <p style="margin-top:15px">.................,..........ngày........tháng........năm........</p>
+    </div>
+
+
+    <div class="sign">
+        <div class="sign">
+            <div class="signColumn">
+                <p style="font-weight:bold;"> NGƯỜI LẬP BÁO CÁO</p>
+                <p>(Ký, ghi rõ họ tên)</p><br />
+                <br/>
+                <br/>
+
+            </div>
+            <div class="signColumn">
+                <p style="font-weight:bold;"> GIÁM ĐỐC BAN KIỂM TRA</p>
+                <p>(Ký, ghi rõ họ tên)</p><br />
+                <br/>
+                <br/>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
