@@ -13,6 +13,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFFont;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Document.OutputSettings.Syntax;
@@ -22,29 +29,95 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
-import com.ceti.demojfx.controller.ChartController;
 import com.itextpdf.text.DocumentException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
 	public void start(Stage stage) throws IOException {
 //		testPdf(stage);
+		testExcel(stage);
 
-		ChartController chartController = new ChartController();
-		Scene scene = new Scene(loadFXML("chartScreen.fxml", chartController));
-		stage.setTitle("Chart Test");
-		stage.setScene(scene);
-		stage.show();
+//		ChartController chartController = new ChartController();
+//		Scene scene = new Scene(loadFXML("chartScreen.fxml", chartController));
+//		stage.setTitle("Chart Test");
+//		stage.setScene(scene);
+//		stage.show();
+	}
+
+	private void testExcel(Stage stage) throws IOException {
+		HSSFWorkbook workbook = new HSSFWorkbook();
+		HSSFSheet sheet = workbook.createSheet("Employees sheet");
+		HSSFCellStyle style = createStyleForTitle(workbook);
+
+		int rownum = 0;
+		Cell cell;
+		Row row;
+
+		row = sheet.createRow(rownum);
+		// EmpNo
+		cell = row.createCell(0, CellType.STRING);
+		cell.setCellValue("EmpNo");
+		cell.setCellStyle(style);
+		// EmpName
+		cell = row.createCell(1, CellType.STRING);
+		cell.setCellValue("EmpNo");
+		cell.setCellStyle(style);
+		// Salary
+		cell = row.createCell(2, CellType.STRING);
+		cell.setCellValue("Salary");
+		cell.setCellStyle(style);
+		// Grade
+		cell = row.createCell(3, CellType.STRING);
+		cell.setCellValue("Grade");
+		cell.setCellStyle(style);
+		// Bonus
+		cell = row.createCell(4, CellType.STRING);
+		cell.setCellValue("Bonus");
+		cell.setCellStyle(style);
+
+		// Data
+		for (int i = 0; i < 10; i++) {
+			rownum++;
+			row = sheet.createRow(rownum);
+
+			// EmpNo (A)
+			cell = row.createCell(0, CellType.STRING);
+			cell.setCellValue(i + 1);
+			// EmpName (B)
+			cell = row.createCell(1, CellType.STRING);
+			cell.setCellValue("Tên " + (i + 1));
+			// Salary (C)
+			cell = row.createCell(2, CellType.NUMERIC);
+			cell.setCellValue(Math.random() * 100);
+			// Grade (D)
+			cell = row.createCell(3, CellType.NUMERIC);
+			cell.setCellValue(Math.random() * 10);
+			// Bonus (E)
+			String formula = "0.1*C" + (rownum + 1) + "*D" + (rownum + 1);
+			cell = row.createCell(4, CellType.FORMULA);
+			cell.setCellFormula(formula);
+		}
+		File file = new File("/home/dangkhoa/Documents/a.xls");
+
+		FileOutputStream outFile = new FileOutputStream(file);
+		workbook.write(outFile);
+		System.out.println("Created file: " + file.getAbsolutePath());
+	}
+
+	private HSSFCellStyle createStyleForTitle(HSSFWorkbook workbook) {
+		HSSFFont font = workbook.createFont();
+		font.setBold(true);
+		HSSFCellStyle style = workbook.createCellStyle();
+		style.setFont(font);
+		return style;
 	}
 
 	private void testPdf(Stage stage) throws IOException {
-
 		List<String> listPdfTest = Arrays.asList("00-Danh-sach-hop-dong-nhan-hang.html",
 				"01-Bang-ke-hoach-kiem-tra-noi-o-dinh-ky.html", "02-Thong-bao-kiem-tra-noi-bo.html",
 				"03-Bien-ban-kiem-tra.html", "04-Bao-cao-ket-qua-kiem-tra.html", "05-Thong-bao-xu-ly-vi-pham.html",
@@ -61,10 +134,8 @@ public class App extends Application {
 			try {
 				xhtmlToPdf(xhtml, inFileName, outputName);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (DocumentException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -104,7 +175,6 @@ public class App extends Application {
 	}
 
 	private static String setParam(String inFileName) {
-
 		ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
 		templateResolver.setTemplateMode(TemplateMode.HTML);
 		templateResolver.setCharacterEncoding("UTF-8");
@@ -121,7 +191,6 @@ public class App extends Application {
 	}
 
 	private static String htmlToXhtml(String html) throws IOException {
-
 		InputStream is = new ByteArrayInputStream(html.getBytes(StandardCharsets.UTF_8));
 		Document document = Jsoup.parse(is, "UTF-8", "");
 		document.outputSettings().syntax(Syntax.xml);
@@ -152,5 +221,4 @@ public class App extends Application {
 	public static void main(String[] args) {
 		launch();
 	}
-
 }
