@@ -29,24 +29,32 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
+import com.ceti.demojfx.controller.TableController;
 import com.itextpdf.text.DocumentException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
 	public void start(Stage stage) throws IOException {
 //		testPdf(stage);
-		testExcel(stage);
+//		testExcel(stage);
 
 //		ChartController chartController = new ChartController();
 //		Scene scene = new Scene(loadFXML("chartScreen.fxml", chartController));
 //		stage.setTitle("Chart Test");
 //		stage.setScene(scene);
 //		stage.show();
+
+		TableController tableController = new TableController();
+		Scene scene = new Scene(loadFXML("tableScreen.fxml", tableController));
+		stage.setTitle("Table Test");
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	private void testExcel(Stage stage) throws IOException {
